@@ -22,7 +22,7 @@ let url=`https://api.weatherbit.io/v2.0/forecast/daily?key=${WEATHER_API_KEY}&la
 let weatherResponse=axios.get(url).then(response => {
     weatherData=response.data;
   let forecast=weatherData.data.map(item=>{
-    return new Forecast(item)
+    return new ForeCast(item)
   })
 
   res.json(forecast)}).catch(err=>{res.status(500).send(`error in getting data ==> ${err}`)})});
@@ -30,8 +30,8 @@ let weatherResponse=axios.get(url).then(response => {
 
 
 app.get('/movies', (req, res)=>{
-    let city_name=req.query.city
-   let urlMovie=`https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_API_KEY}&query=${city_name}`
+    let city=req.query.city
+   let urlMovie=`https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_API_KEY}&query=${city}`
  
    let movieResponse=axios.get(urlMovie).then(response => {
     
