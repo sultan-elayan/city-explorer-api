@@ -1,7 +1,8 @@
 'use strict'
 const WEATHER_API_KEY= process.env.WEATHER_API_KEY;
-const Forecast=require('../model/Forecast.Model');
+const Forecast=require('../models/ForeCast.Model');
 const axios = require('axios'); // require the package
+
 
 
 

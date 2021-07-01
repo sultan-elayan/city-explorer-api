@@ -1,12 +1,12 @@
 'use strict'
-const MOVIE_API_KEY=process.env.MOVIE_API_KEY
-const Movie=require('../model/Movie.Model')
+const Movie=require('../models/Movie.Model')
 const axios = require('axios'); // require the package
+const MOVIE_API_KEY=process.env.MOVIE_API_KEY
 
 
 
 const moviesControl=(req, res)=>{
-   let city_name=req.query.city
+   let city = req.query.city
   let urlMove=`https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_API_KEY}&query=${city}`
 
   let moveResponse=axios.get(urlMove).then(response => {

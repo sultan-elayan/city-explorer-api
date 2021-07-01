@@ -4,9 +4,8 @@ const express = require('express') // require the express package
 const app = express() // initialize your express app instance
 const cors = require('cors');
 const axios = require('axios'); // require the package
-let weatherData = require('./data/weather.json')
-let WEATHER_API_KEY= process.env.WEATHER_API_KEY
-
+const weatherControl=require('./controllers/Weather.Controller')
+const moviesControl=require('./controllers/Movies.Controller')
 
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
